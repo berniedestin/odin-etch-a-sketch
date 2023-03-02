@@ -5,10 +5,34 @@ const etchAsketch = document.querySelector('.etch-a-sketch')
 
 let currentSize = 16 //base size
 
+let colorOn = false
+
 const slideValue = document.querySelector('#slider-value')
 const slider = document.querySelector('#slider')
 
+const btnClear = document.querySelector('.clear')
+const btnColor = document.querySelector('.color-toggle')
+// setup color button
+btnColor.textContent = 'Color'
 
+btnColor.addEventListener('click', colorCheck)
+
+function colorCheck(){
+    if ( btnColor.textContent === 'Color') {
+
+    } else {
+
+    }
+}
+
+btnClear.addEventListener('click', makeWhite)
+
+function makeWhite() {
+    const sketchBlocks = document.querySelectorAll('.sketch-field')
+    sketchBlocks.forEach( sketchBlock => {
+        sketchBlock.style.backgroundColor = 'white'
+    })
+}
 
 slider.addEventListener('input', () => {
     // updates number in div
@@ -65,15 +89,19 @@ createGrid()
 // })
 
 function changeColor() {
-    //console.log(this.id)
-    //console.log(this.matches(':hover'))
-    
-    this.style.backgroundColor = "black"
-    
-
+    if (colorOn){
+        this.style.backgroundColor = randomColor
+    } else {
+        this.style.backgroundColor = "black"
+    }
 }
 
-
+function randomColor() {
+    const colorR = Math.floor(Math.random() * 255)
+    const colorG = Math.floor(Math.random() * 255)
+    const colorB = Math.floor(Math.random() * 255)
+    return `rgb(${colorR}, ${colorG}, ${colorB})`
+}
 
 // event listener for click and hover
 

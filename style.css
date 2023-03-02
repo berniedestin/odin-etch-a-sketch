@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
 
 .option-container {
     height: 50px;
+    width: 200px;
     /* align-self: stretch; */
     background-color: darkgray;
     display: flex;
@@ -46,13 +48,14 @@ body {
 }
 
 #slider-value {
-    color: rgb(248, 248, 248);
+    color: white;
 }
 
 .etch-a-sketch {
     height: 480px;
     width: 480px;
-    background-color: beige; /* placeholder*/
+    margin: 0;
+    padding: 0;
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
@@ -64,6 +67,39 @@ body {
     background-color: white;
     /* flex-wrap: wrap; */
     flex-shrink: 0;
+}
+
+.button-container {
+    height: 50px;
+    width: 200px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-shrink: 0;
+    background-color: darkgray;
+
+    border-color: black;
+    border-style: solid;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+button {
+    width: 70px;
+    /* font-size: 18px; */
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.color-toggle {
+    
 }
 
 .footer {
