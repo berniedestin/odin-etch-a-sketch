@@ -12,6 +12,13 @@ slider.addEventListener('input', () => {
     
 })
 
+slider.addEventListener('change', () => {
+    // updates number in div
+    // slideValue.textContent = slider.value
+    // create new squares
+    createGrid(slider.value)
+})
+
 function createGrid(size = 16) {
     const sketchField = [] // Array for containing div blocks
     const sizeFactor = 100 / size
@@ -21,6 +28,8 @@ function createGrid(size = 16) {
         sketchField[i].classList.add('sketch-field')
         sketchField[i].height = `${sizeFactor}%`
         sketchField[i].width = `${sizeFactor}%`
+        // actually append the stupid squares fam
+        // start her ya idiot-------------------------------------
     }
 
 }
