@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 
 
 }
@@ -31,12 +32,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .etch-a-sketch {
     height: 480px;
     width: 480px;
     background-color: beige; /* placeholder*/
+    flex-shrink: 0;
+    display: flex;
+}
+
+.sketch {
+    margin: 0;
+    flex-wrap: wrap;
 }
 
 .footer {
@@ -44,6 +53,7 @@ body {
     height: 40px;
     align-self: stretch;
     /* background-color: lightgray; */
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;

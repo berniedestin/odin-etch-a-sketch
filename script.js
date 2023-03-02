@@ -2,6 +2,28 @@
 
 // Create etch-a-sketch
 
+const slideValue = document.querySelector('#slider-value')
+const slider = document.querySelector('#slider')
+
+slider.addEventListener('input', () => {
+    // updates number in div
+    slideValue.textContent = slider.value
+    // create new squares
+    
+})
+
+function createGrid(size = 16) {
+    const sketchField = [] // Array for containing div blocks
+    const sizeFactor = 100 / size
+    for ( let i = 0; i < (size * size); i++) {
+        // loop to create div blocks
+        sketchField[i] = document.createElement('div')
+        sketchField[i].classList.add('sketch-field')
+        sketchField[i].height = `${sizeFactor}%`
+        sketchField[i].width = `${sizeFactor}%`
+    }
+
+}
 
 
 
