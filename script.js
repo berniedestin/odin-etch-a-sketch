@@ -14,14 +14,25 @@ const btnClear = document.querySelector('.clear')
 const btnColor = document.querySelector('.color-toggle')
 // setup color button
 btnColor.textContent = 'Color'
+btnColor.style.color = 'honeydew'
+btnColor.style.backgroundColor = 'purple'
+btnColor.style.borderColor = randomColor()
 
 btnColor.addEventListener('click', colorCheck)
 
 function colorCheck(){
     if ( btnColor.textContent === 'Color') {
-
+        btnColor.textContent = 'Basic'
+        btnColor.style.color = 'black'
+        btnColor.style.backgroundColor = 'white'
+        btnColor.style.borderColor = 'black'
+        colorOn = true
     } else {
-
+        btnColor.textContent = 'Color'
+        btnColor.style.color = 'honeydew'
+        btnColor.style.backgroundColor = 'purple'
+        btnColor.style.borderColor = randomColor()
+        colorOn = false
     }
 }
 
@@ -90,7 +101,7 @@ createGrid()
 
 function changeColor() {
     if (colorOn){
-        this.style.backgroundColor = randomColor
+        this.style.backgroundColor = randomColor()
     } else {
         this.style.backgroundColor = "black"
     }
