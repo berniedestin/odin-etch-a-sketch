@@ -1,6 +1,11 @@
 // Etch-a-sketch
 
 // Create etch-a-sketch
+const etchAsketch = document.querySelector('.etch-a-sketch')
+
+let currentSize = 16
+
+//etchAsketch.textContent = 'it worked'
 
 const slideValue = document.querySelector('#slider-value')
 const slider = document.querySelector('#slider')
@@ -16,8 +21,18 @@ slider.addEventListener('change', () => {
     // updates number in div
     // slideValue.textContent = slider.value
     // create new squares
+    removeGrid(currentSize)
+    currentSize = slider.value
     createGrid(slider.value)
 })
+
+function removeGrid(size) {
+    const sketchField = []
+    for ( let i = 0; i < ( size * size ); i++) {
+        sketchField[i] = document.querySelector('.sketch-field')
+        etchAsketch.removeChild(sketchField[i])
+    }
+}
 
 function createGrid(size = 16) {
     const sketchField = [] // Array for containing div blocks
@@ -26,15 +41,15 @@ function createGrid(size = 16) {
         // loop to create div blocks
         sketchField[i] = document.createElement('div')
         sketchField[i].classList.add('sketch-field')
-        sketchField[i].height = `${sizeFactor}%`
-        sketchField[i].width = `${sizeFactor}%`
+        sketchField[i].style.height = `${sizeFactor}%`
+        sketchField[i].style.width = `${sizeFactor}%`
         // actually append the stupid squares fam
-        // start her ya idiot-------------------------------------
+        etchAsketch.appendChild(sketchField[i])
     }
 
 }
 
-
+createGrid()
 
 // This code is for reference only yall
 //

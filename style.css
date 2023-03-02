@@ -41,12 +41,17 @@ body {
     background-color: beige; /* placeholder*/
     flex-shrink: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.sketch {
+.sketch-field {
     margin: 0;
     background-color: white;
-    flex-wrap: wrap;
+    /* for testing*/
+    box-sizing: border-box;
+    border: 1px solid red;
+    /* flex-wrap: wrap; */
+    flex-shrink: 0;
 }
 
 .footer {
